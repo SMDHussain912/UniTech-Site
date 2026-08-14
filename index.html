@@ -6,7 +6,6 @@
     <meta name="description" content="UniTech - Unique Technology studio building websites, games, software, and AI solutions.">
     <meta name="keywords" content="UniTech, web development, game development, software development, AI, automation">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="UniTech - Unique Technology">
     <meta property="og:description" content="Technology studio building digital experiences, games, and AI solutions.">
     <meta property="og:type" content="website">
@@ -17,12 +16,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <header class="navbar">
         <div class="container">
             <a href="#home" class="logo">UniTech</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <main>
-        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-bg"></div>
             <div class="container">
@@ -31,12 +42,14 @@
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-primary">Explore Our Services</a>
                     <a href="#contact" class="btn btn-secondary">Contact Us</a>
-        <!-- Services Section -->
+                </div>
+            </div>
+        </section>
+
         <section id="services" class="services">
             <div class="container">
                 <h2>Our Services</h2>
                 <p class="section-subtitle">What we do best</p>
-                
                 <div class="services-grid">
                     <article class="service-card">
                         <div class="service-icon">
@@ -48,7 +61,6 @@
                         <h3>Web Development</h3>
                         <p>Modern, responsive websites and web applications built with the latest technologies and best practices.</p>
                     </article>
-                    
                     <article class="service-card">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -62,82 +74,7 @@
                         <h3>Game Development</h3>
                         <p>Engaging 2D and 3D games for desktop, mobile, and web platforms with immersive gameplay experiences.</p>
                     </article>
-                    
                     <article class="service-card">
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About UniTech</h2>
-                <p>UniTech is a technology studio focused on building creative digital products and practical software solutions. We combine programming, design, and technology to turn ideas into working products.</p>
-                <p>From websites to games, from simple tools to complex systems, we approach every project with creativity and technical excellence.</p>
-            </div>
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>Our Work</h2>
-                <p class="section-subtitle">Recent projects and experiments</p>
-                
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-icon">💬</div>
-                        <h3>UniChat</h3>
-                        <p>A modern communication platform.</p>
-                        <span class="project-tag">Showcase</span>
-                    </article>
-                    
-                    <article class="project-card">
-                        <div class="project-icon">🎮</div>
-                        <h3>3D Survival Game</h3>
-                        <p>An experimental multiplayer survival game.</p>
-                        <span class="project-tag">Showcase</span>
-                    </article>
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Let's Build Something</h2>
-                <p>Have an idea or project in mind? We'd love to hear from you. Reach out and let's create something amazing together.</p>
-                
-                <div class="contact-links">
-                    <a href="mailto:hello@unitech.studio" class="contact-btn">
-                        <span class="contact-icon">✉️</span>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://github.com/unitech" target="_blank" rel="noopener noreferrer" class="contact-btn">
-                        <span class="contact-icon">💻</span>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="contact-btn">
-                        <span class="contact-icon">📱</span>
-                        <span>WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-brand">UniTech</p>
-            <p class="footer-tagline">Unique Technology</p>
-            <p class="copyright">&copy; <span id="year"></span> UniTech. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-                    
-                    <article class="project-card">
-                        <div class="project-icon">⚙️</div>
-                        <h3>Smart Automation</h3>
-                        <p>Automation and AI-powered software solutions.</p>
-                        <span class="project-tag">Showcase</span>
-                    </article>
-                </div>
-            </div>
-        </section>
-        </section>
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -148,7 +85,6 @@
                         <h3>Software Development</h3>
                         <p>Custom desktop and enterprise software solutions tailored to solve real business problems efficiently.</p>
                     </article>
-                    
                     <article class="service-card">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -167,21 +103,72 @@
                 </div>
             </div>
         </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About UniTech</h2>
+                <p>UniTech is a technology studio focused on building creative digital products and practical software solutions. We combine programming, design, and technology to turn ideas into working products.</p>
+                <p>From websites to games, from simple tools to complex systems, we approach every project with creativity and technical excellence.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Our Work</h2>
+                <p class="section-subtitle">Recent projects and experiments</p>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-icon">💬</div>
+                        <h3>UniChat</h3>
+                        <p>A modern communication platform.</p>
+                        <span class="project-tag">Showcase</span>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-icon">🎮</div>
+                        <h3>3D Survival Game</h3>
+                        <p>An experimental multiplayer survival game.</p>
+                        <span class="project-tag">Showcase</span>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-icon">⚙️</div>
+                        <h3>Smart Automation</h3>
+                        <p>Automation and AI-powered software solutions.</p>
+                        <span class="project-tag">Showcase</span>
+                    </article>
                 </div>
             </div>
         </section>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="nav-menu" aria-label="Main navigation">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Let's Build Something</h2>
+                <p>Have an idea or project in mind? We'd love to hear from you. Reach out and let's create something amazing together.</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@unitech.studio" class="contact-btn">
+                        <span class="contact-icon">✉️</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/unitech" target="_blank" rel="noopener noreferrer" class="contact-btn">
+                        <span class="contact-icon">💻</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="contact-btn">
+                        <span class="contact-icon">📱</span>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-brand">UniTech</p>
+            <p class="footer-tagline">Unique Technology</p>
+            <p class="copyright">&copy; <span id="year"></span> UniTech. All rights reserved.</p>
         </div>
-    </header>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
