@@ -1,63 +1,51 @@
-# UniTech Website - Version 1
+# UniTech Organization Website — Version 2
 
-A clean, modern, one-page website for UniTech (Unique Technology) studio.
+The official one-page site for **UniTech Organization** — an independent, founder-led studio building **games, apps, and websites**.
+
+## What's new in v2
+
+- ✅ **Fixed the corrupted `style.css`** (v1's CSS was scrambled — broken rules, interleaved sections, duplicate braces)
+- 🏷️ **Rebranded to UniTech Organization** ("UniTechOrg") across the page, meta tags, and footer
+- 👤 **New Founder/CEO section** — About now pairs the studio story with a founder card
+- 🎯 **Services rewritten** to match the studio: Game Development, App Development, Web Development (with feature lists)
+- ✨ **Animated hero** — rotating "Games / Apps / Websites" typewriter headline, floating gradient orbs, animated stat counters
+- 🧭 **Better navigation** — active-link highlighting while scrolling, "Start a Project" CTA button, Escape/outside-click menu closing
+- 📊 **Scroll progress bar** + back-to-top button
+- 🎨 Polished dark theme, new favicon, improved SEO/Open Graph tags
+- ♿ `prefers-reduced-motion` support and focus-visible styles
+- 📱 Fully responsive (desktop, tablet, mobile)
 
 ## Files
 
-- `index.html` - Main HTML file with all website sections
-- `style.css` - Complete styling with dark theme and responsive design
-- `script.js` - Vanilla JavaScript for interactions and animations
+| File | Purpose |
+|---|---|
+| `index.html` | All page content and sections |
+| `style.css` | Complete styling (clean, organized, responsive) |
+| `script.js` | Typewriter, nav, reveals, counters, scroll effects |
+| `favicon.svg` | Browser tab icon |
 
-## How to Run
+No build process, no dependencies — just open `index.html` in a browser.
 
-Simply open `index.html` in any modern web browser:
+## Sections
 
-```bash
-# On Linux/Mac
-open index.html
+1. **Hero** — animated headline, tagline, CTA buttons, stat counters
+2. **Services** — Games · Apps · Websites (3 cards)
+3. **Work** — UniChat, 3D Survival Game, Smart Automation (with category + status badges)
+4. **About + Founder** — studio story + CEO & Founder card
+5. **Contact** — Email, GitHub, WhatsApp buttons
+6. **Footer** — quick links + auto-updating copyright year
 
-# Or double-click the file in your file manager
-```
+## ✏️ Customize these (currently placeholders)
 
-No server, build process, or installation required!
+- **Email** — `hello@unitech.studio` in the Contact section + footer
+- **WhatsApp** — `https://wa.me/1234567890` (replace the number)
+- **Stats numbers** — the `data-count` values in the hero (`10+` projects, etc.)
+- **Project statuses** — "In development / Prototype / In testing" labels
+- **Founder name** — set to *SMD Hussain* from the GitHub username; edit if you prefer different wording
+- **`og:url`** — update if the site lives at a different address
 
-## Website Sections
+All edits happen directly in `index.html` — colors live in the `:root` variables at the top of `style.css`.
 
-1. **Navbar** - Fixed navigation with smooth scrolling and mobile hamburger menu
-2. **Hero** - Main heading with modern CSS background effects
-3. **Services** - 4 service cards (Web Dev, Game Dev, Software Dev, AI & Automation)
-4. **About** - Company description
-5. **Projects** - 3 showcase project cards (easily editable)
-6. **Contact** - Contact buttons for Email, GitHub, WhatsApp (placeholder links)
-7. **Footer** - Auto-updating copyright year
+## Deploy
 
-## Features
-
-✓ Fully responsive (desktop, tablet, mobile)
-✓ Dark theme with modern gradients
-✓ Smooth scroll navigation
-✓ Mobile hamburger menu
-✓ Scroll reveal animations
-✓ Semantic HTML5
-✓ Accessible (keyboard navigation, ARIA labels)
-✓ SEO meta tags and Open Graph
-✓ No external dependencies
-✓ Clean, beginner-friendly code
-
-## Customization
-
-All content is in `index.html` and easy to edit:
-- Change text directly in HTML
-- Modify colors in `:root` CSS variables
-- Update contact links in the Contact section
-- Add/remove service cards by copying the `<article>` structure
-
-## Next Steps
-
-This is Version 1 - a simple static site. When you're ready to rebuild professionally:
-- Replace with React, Vue, or other framework
-- Add a backend (Node.js, Python, etc.)
-- Connect to a database
-- Deploy to hosting service
-
-The content and structure are ready to migrate!
+Push to GitHub and enable **GitHub Pages** (Settings → Pages → branch `main`). The site works as-is with no build step.
