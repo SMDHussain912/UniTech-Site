@@ -2,40 +2,62 @@
    UniTechOrganization — Project Catalog
    ============================================
    Single source of truth for the Projects section,
-   the Home "Featured work" strip, and department
-   cross-links. Edit this file; the UI updates
-   automatically on the next page load.
+   the Home "featured work" strip, the Research &
+   Innovation section, and the department project
+   counts.
+
+   HOW THIS FILE WAS VERIFIED (last check: Oct 2026)
+   Every entry below maps to a real public repository
+   under github.com/SMDHussain912.
+   - name/description  : the repository's own title and
+                         description (lightly edited for
+                         grammar only)
+   - technologies      : GitHub's language breakdown for
+                         that repository — nothing guessed
+   - status            : the honest state of the code
+                         ("In development" = actively being
+                         built, "Prototype" = early and
+                         incomplete, "Experiment" = a spike,
+                         "Ongoing" = an always-open lab,
+                         "Live" = publicly deployed and
+                         reachable at demoUrl)
+   - updated           : "YYYY-MM" from GitHub's last push
+   - demoUrl           : ONLY listed when the URL was
+                         opened and confirmed live
+   No users, downloads, customers, revenue or
+   performance numbers are claimed anywhere on the site.
 
    Field guide:
    - id            : unique slug (kebab-case)
    - name          : display name
-   - description   : 1–2 factual sentences (from the
-                     repo description or repo names —
-                     never invented features)
-   - category      : one of the filter keys below
-                     (software | ai | game | app |
-                      robotics | research)
-   - technologies  : languages/stack — only what is
-                     confirmed (GitHub primary language
-                     or repo structure)
-   - status        : "In development" | "Prototype" |
-                     "Experiment" | "Ongoing"
-   - repositoryUrl : GitHub repo (verified)
-   - demoUrl       : only if a live deployment exists
-   - updated       : "YYYY-MM" last pushed (from GitHub)
+   - description   : 1–2 factual sentences
+   - category      : software | ai | game | app |
+                     cybersecurity | robotics | creative |
+                     research  (must match a department
+                     `category` in data/departments.js)
+   - technologies  : confirmed languages/stack
+   - status        : see statuses below
+   - repositoryUrl : verified GitHub repository
+   - demoUrl       : live deployment, or null
+   - relatedRepos  : optional [{name, url}] for projects
+                     that ship as more than one repository
+   - license       : optional, from GitHub
+   - updated       : "YYYY-MM" last push
    - featured      : true → shown in the Home strip
+   - note          : optional honest caveat shown on the card
    ============================================ */
 
 window.UNITECH_PROJECTS = [
     {
         id: "arcengine",
         name: "ArcEngine",
-        description: "A game engine targeting a Unity-like experience for Linux and mobile — custom engine architecture, rendering, and tooling built in C++.",
+        description: "A game engine aiming at a Unity-like experience for Linux and mobile — custom engine architecture, rendering, and tooling.",
         category: "game",
-        technologies: ["C++"],
+        technologies: ["C++", "GLSL", "CMake", "Python"],
         status: "In development",
         repositoryUrl: "https://github.com/SMDHussain912/ArcEngine",
         demoUrl: null,
+        license: "MIT",
         updated: "2026-10",
         featured: true
     },
@@ -44,7 +66,7 @@ window.UNITECH_PROJECTS = [
         name: "MiraV2",
         description: "A modular C++ AI voice assistant for Linux with speech recognition, intent routing, UI automation, screen understanding, and extensible tool execution.",
         category: "ai",
-        technologies: ["C++"],
+        technologies: ["C++", "C", "Python", "CMake"],
         status: "In development",
         repositoryUrl: "https://github.com/SMDHussain912/MiraV2",
         demoUrl: null,
@@ -54,9 +76,9 @@ window.UNITECH_PROJECTS = [
     {
         id: "unisphere",
         name: "UniSphere",
-        description: "A platform for learning and practicing skills — with job and internship listings, learning games, and chat built in.",
+        description: "A platform for learning and practising skills — with job and internship listings, learning games, and chat built in.",
         category: "app",
-        technologies: ["JavaScript"],
+        technologies: ["JavaScript", "CSS", "HTML"],
         status: "In development",
         repositoryUrl: "https://github.com/SMDHussain912/UniSphere",
         demoUrl: null,
@@ -64,47 +86,43 @@ window.UNITECH_PROJECTS = [
         featured: true
     },
     {
-        id: "unitech-site",
-        name: "UniTech-Site",
-        description: "This website — the organization's public home. Built with vanilla HTML, CSS, and JavaScript and deployed on GitHub Pages.",
+        id: "freight-broker-cmr",
+        name: "FreightBroker CMR",
+        description: "A freight brokerage platform built as a three-part suite: a JavaScript web frontend, JavaScript backend services, and a TypeScript mobile app. The public web app is a carrier-vetting control tower.",
         category: "software",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        status: "In development",
-        repositoryUrl: "https://github.com/SMDHussain912/UniTech-Site",
-        demoUrl: "https://smdhussain912.github.io/UniTech-Site/",
-        updated: "2026-10",
-        featured: false
-    },
-    {
-        id: "frieghtbroker-cmr",
-        name: "FrieghtBroker CMR",
-        description: "A freight brokerage platform built as a full suite — web frontend, backend services, and a mobile app.",
-        category: "software",
-        technologies: ["JavaScript", "TypeScript"],
+        technologies: ["JavaScript", "TypeScript", "CSS"],
         status: "In development",
         repositoryUrl: "https://github.com/SMDHussain912/FriegthBrokerCMR-Frontend",
-        demoUrl: null,
+        demoUrl: "https://freightbrokercmr.vercel.app",
+        relatedRepos: [
+            { name: "FriegthBrokerCMR-Backend", url: "https://github.com/SMDHussain912/FriegthBrokerCMR-Backend" },
+            { name: "FriegthBrokerCMR-Mobile", url: "https://github.com/SMDHussain912/FriegthBrokerCMR-Mobile" }
+        ],
         updated: "2026-10",
-        featured: false
+        featured: true
     },
     {
         id: "pm-setu",
         name: "PM SETU",
-        description: "A full-stack web platform with a JavaScript frontend and a TypeScript backend, deployed live on Vercel.",
+        description: "A full-stack web platform with a JavaScript frontend and a TypeScript backend.",
         category: "software",
-        technologies: ["JavaScript", "TypeScript"],
+        technologies: ["JavaScript", "TypeScript", "CSS"],
         status: "In development",
         repositoryUrl: "https://github.com/SMDHussain912/PM-SETU-Frontend",
-        demoUrl: "https://pm-setu-frontend.vercel.app",
+        demoUrl: null,
+        relatedRepos: [
+            { name: "PM-SETU-Backend", url: "https://github.com/SMDHussain912/PM-SETU-Backend" }
+        ],
         updated: "2026-09",
-        featured: false
+        featured: false,
+        note: "The earlier Vercel deployment for this project is no longer reachable, so no demo link is shown."
     },
     {
         id: "arctester",
         name: "ArcTester",
         description: "A mock-test web application built for ECET exam preparation.",
         category: "software",
-        technologies: ["TypeScript"],
+        technologies: ["TypeScript", "CSS"],
         status: "In development",
         repositoryUrl: "https://github.com/SMDHussain912/ArcTester",
         demoUrl: null,
@@ -114,7 +132,7 @@ window.UNITECH_PROJECTS = [
     {
         id: "polling-officer-allocation",
         name: "Polling Officer Allocation",
-        description: "Backend software for polling-officer allocation — built in JavaScript.",
+        description: "Backend software for allocating polling officers.",
         category: "software",
         technologies: ["JavaScript"],
         status: "In development",
@@ -128,7 +146,7 @@ window.UNITECH_PROJECTS = [
         name: "EGCOR",
         description: "A recruitment platform built for the East Godavari Collector Office.",
         category: "software",
-        technologies: ["EJS"],
+        technologies: ["EJS", "JavaScript"],
         status: "Prototype",
         repositoryUrl: "https://github.com/SMDHussain912/EGCOR",
         demoUrl: null,
@@ -136,23 +154,24 @@ window.UNITECH_PROJECTS = [
         featured: false
     },
     {
-        id: "web-server",
+        id: "techfest-web-server",
         name: "College Tech-Fest Web Server",
-        description: "A testing web server built for our college tech festival.",
+        description: "A testing web server written for a college technology festival.",
         category: "software",
-        technologies: ["EJS"],
+        technologies: ["EJS", "JavaScript", "CSS", "HTML"],
         status: "Prototype",
         repositoryUrl: "https://github.com/SMDHussain912/Web-server",
-        demoUrl: "https://ai-career-web-for-our-collage.vercel.app",
+        demoUrl: null,
         updated: "2026-07",
-        featured: false
+        featured: false,
+        note: "The original Vercel deployment is no longer reachable, so no demo link is shown."
     },
     {
         id: "unichat",
         name: "UniChat",
-        description: "The UniChat application codebase — a chat application project.",
+        description: "The UniChat application codebase — a chat application in its early stage.",
         category: "app",
-        technologies: ["JavaScript"],
+        technologies: ["JavaScript", "CSS", "HTML"],
         status: "Prototype",
         repositoryUrl: "https://github.com/SMDHussain912/UniChat",
         demoUrl: null,
@@ -162,9 +181,9 @@ window.UNITECH_PROJECTS = [
     {
         id: "the-system",
         name: "THE-SYSTEM",
-        description: "A personal level system inspired by Solo Leveling, built in Java.",
+        description: "A personal level system inspired by Solo Leveling, with a Java core and a JavaScript web interface.",
         category: "app",
-        technologies: ["Java"],
+        technologies: ["Java", "JavaScript", "CSS", "HTML"],
         status: "Prototype",
         repositoryUrl: "https://github.com/SMDHussain912/THE-SYSTEM",
         demoUrl: null,
@@ -186,9 +205,9 @@ window.UNITECH_PROJECTS = [
     {
         id: "robotsimulator",
         name: "RobotSimulator",
-        description: "An early robotics simulation experiment.",
+        description: "An early robotics simulation experiment with C++ and C sources and a CMake build.",
         category: "robotics",
-        technologies: ["Makefile"],
+        technologies: ["C++", "C", "CMake"],
         status: "Experiment",
         repositoryUrl: "https://github.com/SMDHussain912/RobotSimulator",
         demoUrl: null,
@@ -198,12 +217,23 @@ window.UNITECH_PROJECTS = [
 ];
 
 /* Category keys → labels & CSS color classes.
-   Keep in sync with the filter chips in index.html. */
+   Keep in sync with data/departments.js (`category`). */
 window.UNITECH_CATEGORIES = {
-    software: { label: "Software", class: "cat-software" },
-    ai:       { label: "AI & ML",  class: "cat-ai" },
-    game:     { label: "Game Dev", class: "cat-game" },
-    app:      { label: "Apps",     class: "cat-app" },
-    robotics: { label: "Robotics", class: "cat-robotics" },
-    research: { label: "Research", class: "cat-research" }
+    software:     { label: "Software",   class: "cat-software" },
+    ai:           { label: "AI & ML",    class: "cat-ai" },
+    game:         { label: "Game Dev",   class: "cat-game" },
+    app:          { label: "Apps",       class: "cat-app" },
+    cybersecurity:{ label: "Security",   class: "cat-cyber" },
+    robotics:     { label: "Robotics",   class: "cat-robotics" },
+    creative:     { label: "Creative",   class: "cat-creative" },
+    research:     { label: "Research",   class: "cat-research" }
+};
+
+/* Status keys → label wording + dot colour class. */
+window.UNITECH_STATUSES = {
+    "Live":           { class: "status-live" },
+    "In development": { class: "status-dev" },
+    "Prototype":      { class: "status-proto" },
+    "Experiment":     { class: "status-exp" },
+    "Ongoing":        { class: "status-ongoing" }
 };
